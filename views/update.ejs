@@ -1,0 +1,24 @@
+<%- include('header') %>    
+<div class="col-md-4 mx-auto">
+<form action="/update" method="post" name="frm-singer">
+<h2 class="text-center">Update Singer Form</h2>
+<input type="hidden" name="id" value="<%- singer.id%>">
+<div class="form-group">
+    <label for="">Name</label>
+    <input class="form-control" type="text" name="name" value="<%- singer.name %>">
+</div>
+<div class="form-group">
+    <label for="">Avatar</label>
+    <input class="form-control" type="text" name="avatar" value="<%- singer.avatar %>">
+</div>
+<div class="form-group">
+    <label for="">Link</label>
+    <input class="form-control" type="text" name="link" value="<%- singer.link %>">
+</div>
+<div class="form-group">
+    <a href="/" class="btn btn-warning ">Back</a>
+    <button type="submit" class="btn btn-primary">Update</button>
+</div>
+</form>
+</div>
+<%- include('footer')%>

@@ -1,7 +1,10 @@
 
 <%- include('header') %>    
-    
+<div class="col-md-12">    
+<a href="./add-singer" class="btn btn-success">Add New</a>
+</div>
 <div class="col-md-12">
+<h1 class="text-center">List Singers</h1>
 <table class="table table-striped">
 <thead>
   <tr>
@@ -20,8 +23,8 @@
 <td><%- Singer.name %></td>
 <td><a href="<%- Singer.link%>"><%- Singer.link%></a></td>
 <td>
-<button type="button" class="btn btn-primary">Update</button>
-<button type="button" class="btn btn-warning">Delete</button>
+<a href="/update/<%- Singer.id %>" class="btn btn-primary">Update</a>
+<a href="/delete/<%- Singer.id %>" class="btn btn-warning" onClick="javascript:return confirm('Are you sure ?')">Delete</a>
 </td>
 </tr>
 <%} ) %>  
