@@ -7,7 +7,11 @@ app.use(bodyParser.urlencoded({extended:false}))
 // set view là ejs
 app.set('view engine', 'ejs');
 
-app.listen(3000,()=>{
+
+// chuyển post từ heroku xuống.
+const port = process.env.port || 3000
+
+app.listen(port,()=>{
     return console.log('Server started on port 3000')
 })
 
