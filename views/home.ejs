@@ -5,6 +5,12 @@
 </div>
 <div class="col-md-12">
 <h1 class="text-center">List Singers</h1>
+<%if(error_msg!=''){%>
+    <div class="text-center alert alert-danger"><%=error_msg%></div>
+<% }%>
+<%if(success_msg!=''){%>
+    <div class="text-center alert alert-success"><%=success_msg%></div>
+<% }%>
 <table class="table table-striped">
 <thead>
   <tr>
@@ -19,7 +25,7 @@
 <% arraySinger.forEach(Singer => { %>
 <tr>
 <th scope="row"><%- Singer.id%></th>
-<td><img src="<%- Singer.avatar %>" alt="<%- Singer.name %>" class="img-fluid"></td>
+<td><img src="/images/<%=Singer.avatar%>" alt="<%- Singer.name %>" class="img-fluid"></td>
 <td><%- Singer.name %></td>
 <td><a href="<%- Singer.link%>"><%- Singer.link%></a></td>
 <td>

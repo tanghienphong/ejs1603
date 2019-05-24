@@ -1,15 +1,22 @@
 <%- include('header') %>    
 <div class="col-md-4 mx-auto">
-<form action="/update" method="post" name="frm-singer">
+<form action="/update" method="post" name="frm-singer" enctype="multipart/form-data">
 <h2 class="text-center">Update Singer Form</h2>
-<input type="hidden" name="id" value="<%- singer.id%>">
+<%if(error_msg!=''){%>
+    <div class="text-center alert alert-danger"><%=error_msg%></div>
+<% }%>
+<input type="hidden" name="id" value="<%- singer._id%>">
 <div class="form-group">
     <label for="">Name</label>
     <input class="form-control" type="text" name="name" value="<%- singer.name %>">
 </div>
 <div class="form-group">
+    <img src="/images/<%=singer.avatar%>" alt="<%- singer.name %>" class="img-fluid">
+</div>
+<div class="form-group">
     <label for="">Avatar</label>
-    <input class="form-control" type="text" name="avatar" value="<%- singer.avatar %>">
+    <!--<input class="form-control" type="text" name="avatar" value="<%- singer.avatar %>">-->
+    <input  type="file" name="avatar" value="">
 </div>
 <div class="form-group">
     <label for="">Link</label>
